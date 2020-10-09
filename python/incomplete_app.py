@@ -29,11 +29,11 @@ def print_movie(movie):
 
 def find_movie():
     search = input("Search for movies: ")
-    if search in movies:
-        print_movie(search)
-    else:
-        print("no result")
-
+    for movie in movies:
+        if movie['title']==search:
+            print_movie(movie)
+        else:
+            pass
 
 def menu():
     selection = input(MENU_PROMPT)
@@ -49,5 +49,4 @@ def menu():
 
         selection = input(MENU_PROMPT)
 
-
-# Remember to run the user menu function at the end!
+menu()
