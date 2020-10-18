@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h1 class="display-4">Check your username</h1>
+  <p class="lead">
+    {% if report %}
+      <h1>Congratulation! You pass all requirements</h1>
+    {% else %}
+      <p>There are some issues with your user names</p>
+      <p>Reasons for not passing:</p>
+      <ul>
+        {% if not lower_letter %}
+        <li>You did not use a lowercase letter</li>
+        {% endif %}
+        {% if not upper_letter %}
+        <li>You did not use a uppercase letter</li>
+        {% endif %}
+        {% if not end_num %}
+        <li>You did not use a number at the end</li>
+        {% endif %}
+      </ul>
+
+    {% endif %}
+  </p>
+  <hr class="my-4">
+  <p>You may know more about our company!!</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
+
+
+
+
+{%  endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="jumbotron">
+<h2>Welcome to the User Name Check</h2>
+<p>Let's see if your User Name is valid!</p>
+<p>Fill out the form below with a User Name that has these restraints</p>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  See the requirements
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Requirements</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4>You have to fulfill three criteria to pass</h4>
+        <ul>
+          <li>At least one uppercase letter in the username</li>
+          <li>At least one lowercase letter in the username</li>
+          <li>You need to have a digit at the end of username</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"data-dismiss="modal">Understand</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<form action="{{url_for('report')}}">
+   <label for="username">UserName</label>
+    <input type="text" name="username">
+    <input type="submit" value="Submit">
+</form>
+
+</div>
+{% endblock %}
